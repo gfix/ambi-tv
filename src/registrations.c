@@ -33,6 +33,7 @@
 #include "components/edge-color-processor.h"
 #include "components/mood-light-processor.h"
 #include "components/lpd8806-spidev-sink.h"
+#include "components/ws2801-spidev-sink.h"
 
 #define LOGNAME      "registration: "
 
@@ -65,6 +66,10 @@ static struct ambitv_component_registration registrations[] = {
    {
       .name             = "lpd8806-spidev-sink",
       .constructor      = (void* (*)(const char*, int, char**))ambitv_lpd8806_create
+   },
+   {
+	  .name				= "ws2801-spidev-sink",
+	  .constructor		= (void* (*)(const char*, int, char**))ambitv_ws2801_create
    },
    
    { NULL, NULL }
